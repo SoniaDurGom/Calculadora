@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SoniaDurGom/Calculadora/issues"
   },
-  "homepage": "https://github.com/SoniaDurGom/Calculadora#readme"
+  "homepage": "https://github.com/SoniaDurGom/Calculadora#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
 }
