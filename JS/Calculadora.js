@@ -42,6 +42,7 @@ function borrar (){
 
 cdobject.onclick = function(){myScript};
 
+//module.exports= {sumar, restar, dividir, multiplicar}
 module.exports.multiplicar = multiplicar;
 module.exports.sumar = sumar;
 module.exports.restar = restar;
