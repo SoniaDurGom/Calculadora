@@ -1,4 +1,4 @@
-const Calculadora = require("./Calculadora"); //Importar programa
+const Calculadora = require("../JS/Calculadora"); //Importar programa
 
 describe("Calculadora.js",()=> {  //Descripcion del programa
     test ("Test numero SUMA: ", ()=>{ //Test suma
@@ -11,7 +11,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
     test ("Test numero RESTA: ", ()=>{ //Test resta
         expect(Calculadora.restar(5,3)).toBe(2);
         expect(Calculadora.restar(-3,5)).toBe(-8);
-        expect(Calculadora.restar(3,-5)).toBe(-2);
+        expect(Calculadora.restar(3,-5)).toBe(8);
     })
     
     test ("Test numero MULTIPLICACIÓN: ", ()=>{ //Test Multiplicacion
