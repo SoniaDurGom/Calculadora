@@ -55,7 +55,6 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         return num1;
     }
     else{
-        document.getElementById('display').innerHTML = "ERROR";
         return "ERROR";
     }
     
