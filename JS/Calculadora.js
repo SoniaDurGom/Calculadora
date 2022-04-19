@@ -102,4 +102,3 @@ module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,obtenerNume
 //module.exports.sumar = sumar;
 //module.exports.restar = restar;
 //module.exports.dividir = dividir;
-//module.exports.aux = aux;
