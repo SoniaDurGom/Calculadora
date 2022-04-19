@@ -38,6 +38,7 @@ function mostrar (){
 function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
+        
         return num2;
     }
     if (num1==null){
@@ -91,6 +92,11 @@ function borrar (){
     operador=null;
     resultado=null;
 }
+
+
+
+
+
 
 
 //cdobject.onclick = function(){myScript};

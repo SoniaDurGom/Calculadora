@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="../CSS/Calculadora.css">
-        <script src=""></script>
+        <script src="../JS/Calculadora.js"></script>
 
         <title>Document</title>
     </head>
@@ -29,27 +29,27 @@
     <body>
         <div id="calcMargin">
             <div id="calc">
-                <div id="display"></div>
+                <div id="display"></div>  <!--Pantalla-->
                 <div id="pad">
-                    <p id="n9">9</p><!--1-->
-                    <p id="n8">8</p><!--2-->
-                    <p id="n7">7</p><!--3-->
-                    <p id="n6">6</p><!--4-->
-                    <p id="n5">5</p><!--5-->
-                    <p id="n4">4</p><!--6-->
-                    <p id="n3">3</p><!--7-->
-                    <p id="n2">2</p><!--8-->
-                    <p id="n1">1</p><!--9-->
-                    <p id="n0">0</p><!--10-->
+                    <p id="n9" onclick="obtenerNumero(9)">9</p><!--1-->
+                    <p id="n8" onclick="obtenerNumero(8)">8</p><!--2-->
+                    <p id="n7" onclick="obtenerNumero(7)">7</p><!--3-->
+                    <p id="n6" onclick="obtenerNumero(6)">6</p><!--4-->
+                    <p id="n5" onclick="obtenerNumero(5)">5</p><!--5-->
+                    <p id="n4" onclick="obtenerNumero(4)">4</p><!--6-->
+                    <p id="n3" onclick="obtenerNumero(3)">3</p><!--7-->
+                    <p id="n2" onclick="obtenerNumero(2)">2</p><!--8-->
+                    <p id="n1" onclick="obtenerNumero(1)">1</p><!--9-->
+                    <p id="n0" onclick="obtenerNumero(0)">0</p><!--10-->
         
-                    <p id="S">+</p><!--11-->
-                    <p id="R">-</p><!--12-->
-                    <p id="M">×</p><!--13-->
-                    <p id="D">÷</p><!--14-->
-                    <p id="F">=</p><!--15-->
+                    <p id="Suma" onclick="obtenerOperador('+')">+</p><!--11-->
+                    <p id="Resta" onclick="obtenerOperador('-')">-</p><!--12-->
+                    <p id="Multi" onclick="obtenerOperador('*')">×</p><!--13-->
+                    <p id="Div" onclick="obtenerOperador('/')">÷</p><!--14-->
+                    <p id="Mostrar" onclick="mostrar()">=</p><!--15-->
         
-                    <p id="CLR">CLR</p><!--16-->
-                    <p id="P">.</p><!--17-->
+                    <p id="CLR" onclick="borrar()">CLR</p><!--16-->
+                    <!-- <p id="Punto">.</p>17-->
                 </div>
             </div>
         </div>
