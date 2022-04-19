@@ -6,6 +6,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         expect(Calculadora.obtenerNumero(1)).toBe(1); 
         expect(Calculadora.obtenerNumero(2)).toBe(2); 
         expect(Calculadora.obtenerNumero(52)).toBe("ERROR"); 
+        Calculadora.borrar();
     })
 
     test ("Test numero optenerOperador: ", ()=>{ //Test suma
@@ -14,6 +15,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         expect(Calculadora.obtenerOperador('*')).toBe('*'); 
         expect(Calculadora.obtenerOperador('/')).toBe('/');
         expect(Calculadora.obtenerOperador(':')).toBe("ERROR");
+        Calculadora.borrar();
     })
 
     test ("Test borrar: ", ()=>{ 

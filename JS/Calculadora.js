@@ -1,3 +1,7 @@
+//GLOBAL.document = new JSDOM("Calculadora.html").window.document;
+//var jsdom = require("jsdom");
+//var JSDOM = jsdom.JSDOM;
+
 var resultado=null; //Resultado de la operacion
 var num1=null; //Primer operador
 var num2=null; //Segundo operador
@@ -21,21 +25,30 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
             resultado=dividir();
             break;
         default:
-            console.log("Operador invalido");
+            //console.log("Operador invalido");
             resultado="NAN";
             break;
     }
-    //console.log(resultado);
-    document.getElementById('display').innerHTML = resultado;
+    console.log(resultado);
     return resultado; //Devuelve resultado de la operacion.
    
 }
 
 //Mostrar resultado: Con el igual
 function mostrar (){
+    calcular();
+    document.getElementById('display').innerHTML = resultado;
 }
-
-function imprimir (){
+function imprimirNumero (numero){
+    obtenerNumero(numero);
+    document.getElementById('display').innerHTML = numero;
+}
+function imprimirOperador (operador){
+    obtenerOperador(operador);
+    document.getElementById('display').innerHTML = operador;
+}
+function clr (){
+    document.getElementById('display').innerHTML = "";
 }
 
 //Obtener numero: Si no hay ningun numero guardado guardarlo como num1
@@ -44,32 +57,32 @@ function imprimir (){
 function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
-        //console.log(num2);
-        document.getElementById('display').innerHTML = num2;
+        console.log(num2);
+        //document.getElementById('display').innerHTML = num2;
         return num2;
     }
     if (num1==null){
         num1=numero;
-        //console.log(num1);
-        document.getElementById('display').innerHTML = num1;
+        console.log(num1);
+        //document.getElementById('display').innerHTML = num1;
         return num1;
     }
     else{
         return "ERROR";
     }
-    
+
 }
 
 function obtenerOperador (op){
     if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
         operador=op;
-        //console.log(operador);
-        document.getElementById('display').innerHTML = operador;
+        console.log(operador);
+        //document.getElementById('display').innerHTML = operador;
         return operador;
     }
     else{
         //console.log(operador);
-        document.getElementById('display').innerHTML = "ERROR";
+        //document.getElementById('display').innerHTML = "ERROR";
         return "ERROR";
     }
     
@@ -77,7 +90,7 @@ function obtenerOperador (op){
 
 function sumar(){
     resultado=num1+num2;
-    //console.log(resultado);
+    console.log(resultado);
     return resultado;
 }
 
@@ -109,7 +122,7 @@ function borrar (){
     num2=null;
     operador=null;
     resultado=null;
-    document.getElementById('display').innerHTML = resultado;
+    //document.getElementById('display').innerHTML = resultado;
 }
 
 //cdobject.onclick = function(){myScript};
