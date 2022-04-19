@@ -48,6 +48,7 @@ function imprimirOperador (operador){
     document.getElementById('display').innerHTML = operador;
 }
 function clr (){
+    borrar();
     document.getElementById('display').innerHTML = "";
 }
 
