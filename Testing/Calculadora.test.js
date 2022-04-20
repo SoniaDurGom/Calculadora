@@ -47,7 +47,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         
         Calculadora.obtenerNumero(1.2);
         Calculadora.obtenerNumero(1.3);
-        except(Calculadora.sumar()).toBe(2.5);
+        expect(Calculadora.sumar()).toBe(2.5);
         Calculadora.borrar();
 
         //Con un negativo
