@@ -103,7 +103,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(-4.2);
         Calculadora.obtenerNumero(2.1);
-        expect(Calculadora.restar()).toBe(-6.3);
+        expect(Calculadora.restar()).toBe(-2.1);
         Calculadora.borrar();
 
         Calculadora.obtenerNumero(5);
