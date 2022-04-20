@@ -125,6 +125,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         Calculadora.obtenerNumero(-6.2);
         Calculadora.obtenerNumero(-2.3);
         expect(Calculadora.restar()).toBeCloseTo(-3.9,5);
+        Calculadora.borrar();
     })
     
     test ("Test numero MULTIPLICACIÓN: ", ()=>{ //Test Multiplicacion
