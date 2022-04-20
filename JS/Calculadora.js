@@ -8,6 +8,9 @@ var num2=null; //Segundo operador
 var operador=null; //Operacion a realizar
 var aux;
 var numCadena="";
+var count = 0;
+
+
 
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
@@ -39,6 +42,12 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
 
 //Mostrar resultado: Con el igual
 function mostrar (){
+    count++;
+    if(count==1){
+        obtenerNumero(aux);
+        numCadena="";
+        aux=0;
+    }
     calcular();
     document.getElementById('display').innerHTML = resultado;
 }
@@ -46,11 +55,18 @@ function mostrar (){
 function imprimirNumero (numero){
     if(operador==null) {
         numCadena+=numero.toString();
+        aux=parseInt(numCadena);
+        document.getElementById('display').innerHTML = aux;
+    }else{
+        if(num1==null){
+            obtenerNumero(aux);
+            numCadena="";
+            aux=0;
+        }
+        numCadena+=numero.toString();
+        aux=parseInt(numCadena);
+        document.getElementById('display').innerHTML = aux;
     }
-    aux=parseInt(numCadena);
-    //obtenerNumero(aux);
-    document.getElementById('display').innerHTML = aux;
-
     //obtenerNumero(numero);
     //document.getElementById('display').innerHTML = numero;
 }
@@ -136,6 +152,9 @@ function borrar (){
     num2=null;
     operador=null;
     resultado=null;
+    aux=null;
+    numCadena="";
+    count=0;
     //document.getElementById('display').innerHTML = resultado;
 }
 
