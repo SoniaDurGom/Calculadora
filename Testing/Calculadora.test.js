@@ -47,7 +47,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         
         Calculadora.obtenerNumero(1.2);
         Calculadora.obtenerNumero(1.3);
-        expect(Calculadora.sumar()).toBe(2.5);
+        expect(Calculadora.sumar()).toBeCloseTo(2.5,5);
         Calculadora.borrar();
 
         //Con un negativo
@@ -58,7 +58,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(-2.4);
         Calculadora.obtenerNumero(1.2);
-        expect(Calculadora.sumar()).toBe(-1.2);
+        expect(Calculadora.sumar()).toBeCloseTo(-1.2,5);
         Calculadora.borrar();
 
         Calculadora.obtenerNumero(1);
@@ -68,7 +68,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(2);
         Calculadora.obtenerNumero(-1.2);
-        expect(Calculadora.sumar()).toBe(0.8)
+        expect(Calculadora.sumar()).toBeCloseTo(0.8,5)
         Calculadora.borrar();
 
         //Con dos negativos
@@ -79,7 +79,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(-2.12);
         Calculadora.obtenerNumero(-3.2);
-        expect(Calculadora.sumar()).toBe(-5.32);
+        expect(Calculadora.sumar()).toBeCloseTo(-5.32,5);
         Calculadora.borrar();
         
     })
@@ -92,7 +92,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(10.2);
         Calculadora.obtenerNumero(5.1);
-        expect(Calculadora.restar()).toBe(5.1);
+        expect(Calculadora.restar()).toBeCloseTo(5.1,5);
         Calculadora.borrar();
 
         //Un numero negativo
@@ -136,7 +136,11 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(10.2);
         Calculadora.obtenerNumero(6.2);
+<<<<<<< HEAD
         expect(Calculadora.multiplicar()).toBeCloseTo(63.24);
+=======
+        expect(Calculadora.multiplicar()).toBeCloseTo(63.24,5);
+>>>>>>> b1ed61a9ebfeeeb3ff29f7c3823a89871a3acff4
         Calculadora.borrar();
 
         //Con un valor negativo
@@ -147,7 +151,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(-3.5);
         Calculadora.obtenerNumero(2.6);
-        expect(Calculadora.multiplicar()).toBe(-9.1);
+        expect(Calculadora.multiplicar()).toBeCloseTo(-9.1,5);
         Calculadora.borrar();
 
         Calculadora.obtenerNumero(2);
@@ -157,7 +161,11 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(2.1);
         Calculadora.obtenerNumero(-3.2);
+<<<<<<< HEAD
         expect(Calculadora.multiplicar()).toBeCloseTo(-6.72);
+=======
+        expect(Calculadora.multiplicar()).toBeCloseTo(-6.72,5);
+>>>>>>> b1ed61a9ebfeeeb3ff29f7c3823a89871a3acff4
         Calculadora.borrar();
 
         //Con dos valores negativos
@@ -180,7 +188,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(10.22);
         Calculadora.obtenerNumero(5.12);
-        expect(Calculadora.dividir()).toBe(1.99609375);
+        expect(Calculadora.dividir()).toBeCloseTo(1.99,5);
         Calculadora.borrar();
 
         //Con un valor negativo
@@ -189,12 +197,27 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         expect(Calculadora.dividir()).toBe(-5);
         Calculadora.borrar();
 
+<<<<<<< HEAD
+=======
+        Calculadora.obtenerNumero(-15.2);
+        Calculadora.obtenerNumero(2.2);
+        expect(Calculadora.dividir()).toBeCloseTo(-6.90,5);
+        Calculadora.borrar();
+
+>>>>>>> b1ed61a9ebfeeeb3ff29f7c3823a89871a3acff4
         Calculadora.obtenerNumero(-25);
         Calculadora.obtenerNumero(-5);
         expect(Calculadora.dividir()).toBe(5);
         Calculadora.borrar();
 
+<<<<<<< HEAD
     
+=======
+        Calculadora.obtenerNumero(-12.2);
+        Calculadora.obtenerNumero(-5.3);
+        expect(Calculadora.dividir()).toBeCloseTo(-6.9,5);
+        Calculadora.borrar();
+>>>>>>> b1ed61a9ebfeeeb3ff29f7c3823a89871a3acff4
 
         Calculadora.obtenerNumero(0);
         Calculadora.obtenerNumero(2);
