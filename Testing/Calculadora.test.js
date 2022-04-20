@@ -68,7 +68,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.calcular.obtenerNumero(2);
         Calculadora.obtenerNumero(-1.2);
-        expec(Calculadora.sumar()).toBe(0.8)
+        expect(Calculadora.sumar()).toBe(0.8)
         Calculadora.borrar();
 
         //Con dos negativos
