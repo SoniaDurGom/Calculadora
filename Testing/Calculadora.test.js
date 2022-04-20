@@ -178,7 +178,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(10.22);
         Calculadora.obtenerNumero(5.12);
-        expect(Calculadora.dividir()).toBe(1.99609375);
+        expect(Calculadora.dividir()).toBe(1.99);
         Calculadora.borrar();
 
         //Con un valor negativo
@@ -189,7 +189,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
 
         Calculadora.obtenerNumero(-15.2);
         Calculadora.obtenerNumero(2.2);
-        expect(Calculadora.dividir()).toBe(-6.90909090909);
+        expect(Calculadora.dividir()).toBe(-6.90);
         Calculadora.borrar();
 
         Calculadora.obtenerNumero(-25);
