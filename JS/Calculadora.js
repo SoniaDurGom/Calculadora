@@ -97,7 +97,7 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         return num1;
     }
     else{
-        window.alert("Error");
+        //window.alert("Error");
         return "ERROR";
     }
 
