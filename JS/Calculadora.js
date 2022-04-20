@@ -6,6 +6,9 @@ var resultado=null; //Resultado de la operacion
 var num1=null; //Primer operador
 var num2=null; //Segundo operador
 var operador=null; //Operacion a realizar
+var aux;
+var numCadena="";
+
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
     switch (operador) {
@@ -39,9 +42,17 @@ function mostrar (){
     calcular();
     document.getElementById('display').innerHTML = resultado;
 }
+
 function imprimirNumero (numero){
-    obtenerNumero(numero);
-    document.getElementById('display').innerHTML = numero;
+    if(operador==null) {
+        numCadena+=numero.toString();
+    }
+    aux=parseInt(numCadena);
+    //obtenerNumero(aux);
+    document.getElementById('display').innerHTML = aux;
+
+    //obtenerNumero(numero);
+    //document.getElementById('display').innerHTML = numero;
 }
 function imprimirOperador (operador){
     obtenerOperador(operador);
@@ -61,6 +72,7 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
+        
     }
     if (num1==null){
         num1=numero;
@@ -69,6 +81,7 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         return num1;
     }
     else{
+        window.alert("Error");
         return "ERROR";
     }
 

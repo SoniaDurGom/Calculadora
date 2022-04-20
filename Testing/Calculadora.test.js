@@ -28,6 +28,13 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         Calculadora.obtenerNumero(1);
         Calculadora.obtenerNumero(2);
         expect(Calculadora.sumar()).toBe(3);
+        /*
+        //VAriables locales
+        expect(Calculadora.num1).toBeNull();
+        expect(Calculadora.num2).toBeNull();
+        expect(Calculadora.resultado).toBeNull();
+        expect(Calculadora.operador).toBeNull();
+        */
         Calculadora.borrar();
 
         //Con un negativo
