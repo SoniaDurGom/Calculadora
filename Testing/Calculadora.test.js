@@ -9,7 +9,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         Calculadora.borrar();
     })
 
-    test ("Test numero optenerOperador: ", ()=>{ 
+    test ("Test numero obtenerOperador: ", ()=>{ 
         //Operadores validos
         expect(Calculadora.obtenerOperador('+')).toBe('+'); 
         expect(Calculadora.obtenerOperador('-')).toBe('-'); 
