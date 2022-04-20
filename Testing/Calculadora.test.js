@@ -46,7 +46,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         Calculadora.borrar();
         
         Calculadora.obtenerNumero(1.2);
-        Calculadora.calcular.obtenerNumero(1.3);
+        Calculadora.obtenerNumero(1.3);
         except(Calculadora.sumar()).toBe(2.5);
         Calculadora.borrar();
 
@@ -66,7 +66,7 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         expect(Calculadora.sumar()).toBe(-1);
         Calculadora.borrar();
 
-        Calculadora.calcular.obtenerNumero(2);
+        Calculadora.obtenerNumero(2);
         Calculadora.obtenerNumero(-1.2);
         expect(Calculadora.sumar()).toBe(0.8)
         Calculadora.borrar();
@@ -77,8 +77,8 @@ describe("Calculadora.js",()=> {  //Descripcion del programa
         expect(Calculadora.sumar()).toBe(-3);
         Calculadora.borrar();
 
-        Calculadora.calcular.obtenerNumero(-2.12);
-        Calculadora.calcular.obtenerNumero(-3.2);
+        Calculadora.obtenerNumero(-2.12);
+        Calculadora.obtenerNumero(-3.2);
         expect(Calculadora.sumar()).toBe(-5.32);
         Calculadora.borrar();
         
