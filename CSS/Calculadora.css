@@ -31,9 +31,6 @@ body
     justify-content: center;
     align-items: center;
     
-    /**/
-    /*68.8*/
-    /* background-image: url(../IMG/Calculadora\ movimiento\ 1.png); */
     background-position: center;
     background-repeat: no-repeat;
 
@@ -65,60 +62,88 @@ img
 }
 #calc
 {
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 90%;
 
     /* background-color: blue; */
 }
-#display
+.nixie
 {
     width: calc(100% - 4vw);
-    height: 10vh;
-    margin: 2vh 2vw;
-    
-    /* Letras efecto 3D*/
-    color:white; 
-    font-family: Arial Black; 
-    font-weight: bold; 
-    font-size: 40px; 
-    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
-    text-indent: 10px;
-    /* Letras efecto 3D*/
+    height: 20%;
+    margin-bottom: 2vw;
+    padding: 0 2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: absolute;
 
     border-radius: 10px;
-    border: 1px solid black;
-    background-color: #000000;
+
+    font-size: 25px;
+    font-family: Arial;
+    color: #d346c93f;
+
+    background-color: rgba(0, 0, 255, 0.297);
+    background-color: transparent;
+    visibility: hidden;
+}
+#display
+{
+    width: calc(100% - 4vw - 4px);
+    height: 20%;
+    margin-bottom: 2vw;
+    padding: 0 2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    border-radius: 10px;
+    border: 2px solid #882c83;
+
+    /* Letras efecto 3D*/
+    font-family: Arial Black; 
+    font-weight: bold; 
+    font-size: 25px; 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+    text-indent: 10px;
+    color:white; 
+    /* Letras efecto 3D*/
+
+    background-color: #190818;
 }
 #pad
 {
-    width: calc(100% - 4vw);
-    height: calc(100% - 16vh);
-    margin: 0 2vw 2vh 2vw;
+    width: 100%;
+    height: calc(80% - 2vw - 4px);
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    gap: 2vw;
+    gap: 2vw;
 
-    column-gap: 2vw;
-    row-gap: 2vh;
-
-    /* background-color: rgb(63, 0, 0); */
+    /* background-color: rgba(63, 0, 0, 0.541); */
 }
 p
 {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
     margin: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    
+    border: 1px solid #882c83;
     border-radius: 10px;
-    color: white;
 
-    border: 1px solid black;
+    font-size: 20px;
+    font-family: Arial;
+    color: #4f174c;
+
     background-color: #d346c9;
 }
 
@@ -249,12 +274,6 @@ p
     grid-column: 4/5;
     /* background-color: rgb(92, 0, 128); */
 }
-
-
-
-/*****************************************************************/
-/*      Media Queries                                            */
-/*****************************************************************/
 
 
 
