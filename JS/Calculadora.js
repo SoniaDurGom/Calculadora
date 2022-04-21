@@ -7,8 +7,8 @@ var num1=null; //Primer operador
 var num2=null; //Segundo operador
 var operador=null; //Operacion a realizar
 var aux;
-var numCadena="";
-var count = 0;
+var numCadena=""; //El valor del numero guardado como cadena
+var count = 0; //Para recibir el segundo numero
 
 
 
