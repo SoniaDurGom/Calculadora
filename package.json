@@ -4,7 +4,7 @@
   "description": "1. Crear proyecto npm: `npm init`\r 2. Instalar Jest: `npm i jest`\r 3. Ejecutar Jest: `npx jest`\r 4. Crear test de comprobacion\r 5. Crear test por cada caso de uso",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
