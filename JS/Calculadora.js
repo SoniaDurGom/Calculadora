@@ -191,4 +191,4 @@ function borrar (){
 
 //}
 
-module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
+module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
