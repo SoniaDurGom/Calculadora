@@ -1,6 +1,15 @@
 const Calculadora = require("../JS/Calculadora"); //Importar programa
 
-describe("Calculadora.js",()=> {  //Descripcion del programa
+beforeEach(()=>{
+    Calculadora.num1=null;
+    //..
+})
+afterEach(()=>{
+    Calculadora.num1=null;
+    //..
+})
+
+describe("Calculadora.js",()=> {  //!!!!!!!!!!!!Descripcion del programa, un describe para cada metodo...
 
     test ("Test obtenerNumero: ", ()=>{ 
         expect(Calculadora.obtenerNumero(1)).toBe(1); 

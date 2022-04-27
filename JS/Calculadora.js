@@ -2,15 +2,16 @@
 //var jsdom = require("jsdom");
 //var JSDOM = jsdom.JSDOM;
 
+//numeroanterior
+
 var resultado=null; //Resultado de la operacion
 var num1=null; //Primer operador
 var num2=null; //Segundo operador
 var operador=null; //Operacion a realizar
+
 var aux;
 var numCadena=""; //El valor del numero guardado como cadena
 var count = 0; //Para recibir el segundo numero
-
-
 
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
@@ -41,7 +42,7 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
 }
 
 //Mostrar resultado: Con el igual
-function mostrar (){
+function mostrar (){ //Meter un for each
     count++;
     if(count==1){
         obtenerNumero(aux);
@@ -52,6 +53,7 @@ function mostrar (){
     document.getElementById('display').innerHTML = resultado;
 }
 
+//pintar pantalla (elemento,valor)
 function imprimirNumero (numero){
     if(operador==null) {
         numCadena+=numero.toString();
@@ -70,7 +72,7 @@ function imprimirNumero (numero){
     //obtenerNumero(numero);
     //document.getElementById('display').innerHTML = numero;
 }
-function imprimirOperador (operador){
+function imprimirOperador (operador){ 
     obtenerOperador(operador);
     document.getElementById('display').innerHTML = operador;
 }
@@ -145,6 +147,7 @@ function dividir (){
     console.log(resultado);
     return resultado;
 }
+//for each addeventlistener. Caa vez que clic muestra. MIRAR
 
 //Boton borrar, todas las variables globales a estado inicial
 function borrar (){
@@ -159,5 +162,16 @@ function borrar (){
 }
 
 //cdobject.onclick = function(){myScript};
+//const calculadora={
+  //  num1: num1,
+    //num2: null,
+    //op,
+    //resultado: null,
+    //sumar: function(n1,n2){return n1+n2},
+    //restar,
+    //....
+    //luego se exporta calculadora
+
+//}
 
 module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
