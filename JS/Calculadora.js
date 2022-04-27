@@ -8,11 +8,11 @@ var resultado=null; //Resultado de la operacion
 var num1=null; //Primer operador
 var num2=null; //Segundo operador
 var operador=null; //Operacion a realizar
+var numeroAnterior=null;
 
 var aux;
 var numCadena=""; //El valor del numero guardado como cadena
 var count = 0; //Para recibir el segundo numero
-
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
     switch (operador) {
@@ -36,7 +36,7 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
             resultado="NAN";
             break;
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado; //Devuelve resultado de la operacion.
    
 }
@@ -50,15 +50,23 @@ function mostrar (){ //Meter un for each
         aux=0;
     }
     calcular();
-    document.getElementById('display').innerHTML = resultado;
+    imprimirPantalla (resultado);
+    if(resultado!=null){
+        num1=resultado;
+    }
 }
+
+function imprimirPantalla (valor){ //Meter un for each
+    document.getElementById('display').innerHTML = valor;
+}
+
 
 //pintar pantalla (elemento,valor)
 function imprimirNumero (numero){
     if(operador==null) {
         numCadena+=numero.toString();
         aux=parseInt(numCadena);
-        document.getElementById('display').innerHTML = aux;
+        imprimirPantalla (aux);
     }else{
         if(num1==null){
             obtenerNumero(aux);
@@ -67,18 +75,20 @@ function imprimirNumero (numero){
         }
         numCadena+=numero.toString();
         aux=parseInt(numCadena);
-        document.getElementById('display').innerHTML = aux;
+        imprimirPantalla (aux);
     }
     //obtenerNumero(numero);
     //document.getElementById('display').innerHTML = numero;
 }
+
 function imprimirOperador (operador){ 
     obtenerOperador(operador);
-    document.getElementById('display').innerHTML = operador;
+    imprimirPantalla (operador);
 }
+
 function clr (){
     borrar();
-    document.getElementById('display').innerHTML = "";
+    imprimirPantalla ("")
 }
 
 //Obtener numero: Si no hay ningun numero guardado guardarlo como num1
@@ -87,14 +97,14 @@ function clr (){
 function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
-        console.log(num2);
+        //console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
         
     }
     if (num1==null){
         num1=numero;
-        console.log(num1);
+        //console.log(num1);
         //document.getElementById('display').innerHTML = num1;
         return num1;
     }
@@ -108,7 +118,8 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
 function obtenerOperador (op){
     if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
         operador=op;
-        console.log(operador);
+       
+        //console.log(operador);
         //document.getElementById('display').innerHTML = operador;
         return operador;
     }
@@ -122,19 +133,19 @@ function obtenerOperador (op){
 
 function sumar(){
     resultado=num1+num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function restar (){
     resultado=num1-num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function multiplicar (){
     resultado=num1*num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
@@ -144,7 +155,7 @@ function dividir (){
     }else{
         resultado="NAN";
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 //for each addeventlistener. Caa vez que clic muestra. MIRAR
@@ -174,4 +185,4 @@ function borrar (){
 
 //}
 
-module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
+module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}

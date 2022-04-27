@@ -6,3 +6,14 @@ Crear proyecto  jest npx jest --init
 3. Ejecutar Jest: `npx jest` 
 4. Crear test de comprobacion
 5. Crear test por cada caso de uso
+
+Test automatico:
+ "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+    
+    
+  },
+
+En terminal: 
+npm run test:watch (en este caso) 
