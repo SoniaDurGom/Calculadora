@@ -52,7 +52,7 @@ function mostrar (){ //Meter un for each
     imprimirPantalla (resultado);
     if(resultado!=null){
         console.log(num1+operador +num2+ "="+resultado);
-        num1=resultado;
+        //num1=resultado;
         console.log(num1+operador +num2+ "="+resultado);
     }
 }
@@ -99,20 +99,21 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
-        
     }
+
     if (num1==null){
         num1=numero;
         console.log(num1);
         //document.getElementById('display').innerHTML = num1;
         return num1;
     } 
+
     if (num1!=null && num2!=null){
+        num1=resultado;
         num2=numero;
         console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
-        
     }
     else{
         //window.alert("Error");
