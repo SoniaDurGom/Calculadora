@@ -262,13 +262,13 @@ afterEach(()=>{
             expect(Calculadora.calcular()).toBe("NAN");
             Calculadora.borrar();
 
-            Calculadora.obtenerNumero(5);
-            Calculadora.obtenerNumero(3);
+            Calculadora.obtenerNumero(2);
+            Calculadora.obtenerNumero(2);
             Calculadora.obtenerOperador('+');
-            expect(Calculadora.calcular()).toBe(8);
-            
+            expect(Calculadora.calcular()).toBe(4);
+
             Calculadora.obtenerOperador ('+');
             Calculadora.obtenerNumero (2);
-            expect(Calculadora.calcular()).toBe(10);
+            expect(Calculadora.calcular()).toBe(6);
         })
     })
