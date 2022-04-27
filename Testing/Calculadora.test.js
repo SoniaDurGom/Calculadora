@@ -265,10 +265,9 @@ afterEach(()=>{
             Calculadora.obtenerNumero(2);
             Calculadora.obtenerNumero(2);
             Calculadora.obtenerOperador('+');
-            expect(Calculadora.calcular()).toBe(4);
-
+            expect(Calculadora.mostrar()).toBe(4);
             Calculadora.obtenerOperador ('+');
             Calculadora.obtenerNumero (2);
-            expect(Calculadora.calcular()).toBe(6);
+            expect(Calculadora.mostrar()).toBe(6);
         })
     })
