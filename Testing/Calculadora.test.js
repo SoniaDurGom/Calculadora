@@ -310,7 +310,7 @@ afterEach(()=>{
             Calculadora.obtenerNumero(3);
             Calculadora.obtenerOperador('/');
             expect(Calculadora.calcular()).toBe(5);
-       })
+        })
 
         test ("Calculo con operador invalido: ", ()=>{ 
             Calculadora.obtenerNumero(5);
