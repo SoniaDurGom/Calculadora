@@ -13,7 +13,6 @@ var aux;
 var numCadena=""; //El valor del numero guardado como cadena
 var count = 0; //Para recibir el segundo numero
 
-
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
     switch (operador) {
         case '+':
@@ -33,10 +32,10 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
             break;
         default:
             //console.log("Operador invalido");
-            resultado="NAN";
+            resultado= NaN ;
             break;
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado; //Devuelve resultado de la operacion.
    
 }
@@ -44,21 +43,29 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
 //Mostrar resultado: Con el igual
 function mostrar (){ //Meter un for each
     count++;
-    if(count==1){
+    if(count>=1){
         obtenerNumero(aux);
         numCadena="";
         aux=0;
     }
     calcular();
-    document.getElementById('display').innerHTML = resultado;
+    imprimirPantalla (resultado);
+    //if(resultado!=null){
+        //console.log(num1+operador +num2+ "="+resultado);
+        //num1=resultado;
+        //console.log(num1+operador +num2+ "="+resultado);
+    //}
 }
 
-//pintar pantalla (elemento,valor)
+function imprimirPantalla (valor){ //Meter un for each
+    document.getElementById('display').innerHTML = valor;
+}
+
 function imprimirNumero (numero){
-    if(operador==null) {
+    if(operador==null) { //Si no hay operador, sigue leyendo numeros
         numCadena+=numero.toString();
         aux=parseInt(numCadena);
-        document.getElementById('display').innerHTML = aux;
+        imprimirPantalla (aux);
     }else{
         if(num1==null){
             obtenerNumero(aux);
@@ -67,18 +74,28 @@ function imprimirNumero (numero){
         }
         numCadena+=numero.toString();
         aux=parseInt(numCadena);
-        document.getElementById('display').innerHTML = aux;
+        imprimirPantalla (aux);
     }
     //obtenerNumero(numero);
-    //document.getElementById('display').innerHTML = numero;
+    //imprimirPantalla(numero);
 }
+
 function imprimirOperador (operador){ 
     obtenerOperador(operador);
-    document.getElementById('display').innerHTML = operador;
+    if(operador == '*'){
+        imprimirPantalla ('x');
+    }
+    if(operador == '/'){
+        imprimirPantalla ('÷');
+    }
+    else{
+        imprimirPantalla (operador);
+    }
 }
+
 function clr (){
     borrar();
-    document.getElementById('display').innerHTML = "";
+    imprimirPantalla ("")
 }
 
 //Obtener numero: Si no hay ningun numero guardado guardarlo como num1
@@ -87,16 +104,24 @@ function clr (){
 function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
-        console.log(num2);
+        //console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
-        
     }
+
     if (num1==null){
         num1=numero;
-        console.log(num1);
+        //console.log(num1);
         //document.getElementById('display').innerHTML = num1;
         return num1;
+    } 
+
+    if (num1!=null && num2!=null){
+        num1=resultado;
+        num2=numero;
+        //console.log(num2);
+        //document.getElementById('display').innerHTML = num2;
+        return num2;
     }
     else{
         //window.alert("Error");
@@ -108,7 +133,8 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
 function obtenerOperador (op){
     if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
         operador=op;
-        console.log(operador);
+       
+        //console.log(operador);
         //document.getElementById('display').innerHTML = operador;
         return operador;
     }
@@ -122,19 +148,19 @@ function obtenerOperador (op){
 
 function sumar(){
     resultado=num1+num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function restar (){
     resultado=num1-num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function multiplicar (){
     resultado=num1*num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
@@ -142,9 +168,9 @@ function dividir (){
     if(num2!=0){
         resultado= num1/num2;
     }else{
-        resultado="NAN";
+        resultado= NaN;
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 //for each addeventlistener. Caa vez que clic muestra. MIRAR
@@ -174,4 +200,11 @@ function borrar (){
 
 //}
 
-module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
+
+function recorridoTecla(id)
+{
+    console.log("Recorrido tecla: " + id);
+}
+
+
+module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}

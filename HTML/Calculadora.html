@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="../CSS/Calculadora.css">
-        <script src="../JS/Calculadora.js"></script>
+        <script src="../JS/Calculadora.js" defer></script>
 
         <title>Document</title>
     </head>
@@ -30,32 +30,61 @@
         <div id="calcStruct">
             <img src="../IMG/Calculadora movimiento 1.png">
             <div id="calcMargin">
-                <div id="calc">
-                    <!-- <div class="nixie">0123456789NAN</div> -->
-                    <!-- <div class="nixie">1234567890123</div> -->
-                    <!-- <div class="nixie">2345678901234</div> -->
-                    <div id="display"></div>
+                <div id="caraCalculadora">
+                    
+                    
                 
-                    <div id="pad">
-                        <p id="n9" onclick="imprimirNumero(9)">9</p>
-                        <p id="n8" onclick="imprimirNumero(8)">8</p>
-                        <p id="n7" onclick="imprimirNumero(7)">7</p>
-                        <p id="n6" onclick="imprimirNumero(6)">6</p>
-                        <p id="n5" onclick="imprimirNumero(5)">5</p>
-                        <p id="n4" onclick="imprimirNumero(4)">4</p>
-                        <p id="n3" onclick="imprimirNumero(3)">3</p>
-                        <p id="n2" onclick="imprimirNumero(2)">2</p>
-                        <p id="n1" onclick="imprimirNumero(1)">1</p>
-                        <p id="n0" onclick="imprimirNumero(0)">0</p>
+                    <div id="panel">
+                        <div id="display"></div>
+                        
+                        <div class="nixie">890123456789+-*/.eNAN</div>
+                        
+                        <div class="nixie">90123437890123456789+</div>
+                        <div class="nixie">0123437890123456789+-</div>
+                        <div class="nixie">123437890123456789+-*</div>
+                        <div class="nixie">23437890123456789+-*/</div>
+                        <div class="nixie">3437890123456789+-*/e</div>
+                        <div class="nixie">437890123456789+-*/e.</div>
+                        <div class="nixie">47890123456789+-*/e.0</div>
+                        <div class="nixie">7890123456789+-*/e.01</div>
+                        <div class="nixie">890123456789+-*/e.012</div>
+                        <div class="nixie">90123456789+-*/e.0123</div>
+                        <div class="nixie">0123456789+-*/e.01234</div>
+                        <div class="nixie">123456789+-*/e.012345</div>
+                        <div class="nixie">23456789+-*/e.0123456</div>
+                        <div class="nixie">3456789+-*/e.01234567</div>
+                        <div class="nixie">456789+-*/e.012345678</div>
+                        <div class="nixie">56789+-*/e.0123456789</div>
+                        <div class="nixie">6789+-*/e.01234567890</div>
+                        <div class="nixie">789+-*/e.012345678901</div>
+                        <div class="nixie">89+-*/e.0123456789012</div>
+                        <div class="nixie">9+-*/e.01234567890123</div>
+                        <div class="nixie">+-*/e.012345678901234</div>
+                        <div class="nixie">-*/e.0123456789012345</div>
+                        <div class="nixie">*/e.01234567890123456</div>
+                        <div class="nixie">/e.012345678901234567</div>
+                        <div class="nixie">e.0123456789012345678</div>
+                        <div class="nixie">.01234567890123456789</div>
+                        
+                        <p class="tecla" id="numero0" onclick="imprimirNumero(0)">0</p>
+                        <p class="tecla" id="numero1" onclick="imprimirNumero(1)">1</p>
+                        <p class="tecla" id="numero2" onclick="imprimirNumero(2)">2</p>
+                        <p class="tecla" id="numero3" onclick="imprimirNumero(3)">3</p>
+                        <p class="tecla" id="numero4" onclick="imprimirNumero(4)">4</p>
+                        <p class="tecla" id="numero5" onclick="imprimirNumero(5)">5</p>
+                        <p class="tecla" id="numero6" onclick="imprimirNumero(6)">6</p>
+                        <p class="tecla" id="numero7" onclick="imprimirNumero(7)">7</p>
+                        <p class="tecla" id="numero8" onclick="imprimirNumero(8)">8</p>
+                        <p class="tecla" id="numero9" onclick="imprimirNumero(9)">9</p>
+                        
+                        <p class="tecla" id="teclaSuma" onclick="imprimirOperador('+')">+</p>
+                        <p class="tecla" id="teclaResta" onclick="imprimirOperador('-')">-</p>
+                        <p class="tecla" id="teclaMultiplicacion" onclick="imprimirOperador('*')">×</p>
+                        <p class="tecla" id="teclaDivision" onclick="imprimirOperador('/')">÷</p>
+                        <p class="tecla" id="teclaTotal" onclick="mostrar()">=</p>
             
-                        <p id="Suma" onclick="imprimirOperador('+')">+</p>
-                        <p id="Resta" onclick="imprimirOperador('-')">-</p>
-                        <p id="Multi" onclick="imprimirOperador('*')">×</p>
-                        <p id="Div" onclick="imprimirOperador('/')">÷</p>
-                        <p id="Mostrar" onclick="mostrar()">=</p>
-            
-                        <p id="CLR" onclick="clr()">CLR</p>
-                        <!-- <p id="Punto">.</p>-->
+                        <p class="tecla" id="teclaLimpiar" onclick="clr()">CLR</p>
+                        <!-- <p class="tecla" id="teclaPunto">.</p>-->
                     </div>
                 </div>
             </div>
