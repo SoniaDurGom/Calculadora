@@ -224,10 +224,16 @@ function borrar (){
 //}
 
 
+
+/*****************************************************************/
+
 function recorridoTecla(id)
 {
     console.log("Recorrido tecla: " + id);
 }
+
+/*****************************************************************/
+
 
 
 module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
