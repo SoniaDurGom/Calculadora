@@ -13,7 +13,7 @@ afterEach(()=>{
         test ("Test obtenerNumero: ", ()=>{ 
             expect(Calculadora.obtenerNumero(1)).toBe(1); 
             expect(Calculadora.obtenerNumero(2)).toBe(2); 
-            expect(Calculadora.obtenerNumero(52)).toBe("ERROR"); 
+            expect(Calculadora.obtenerNumero(52)).toBe(52); //Antes error, ahora los numeros que se obtienen despues de tener num 1 y num2 se meten en num2
             Calculadora.borrar();
         })
     })
@@ -322,13 +322,19 @@ afterEach(()=>{
             Calculadora.borrar();
         })
 
+<<<<<<< HEAD
         test ("Volver a calcular con el ultimo resultado: ", ()=>{ 
             Calculadora.obtenerNumero(2);
             Calculadora.obtenerNumero(2);
+=======
+            Calculadora.obtenerNumero(10);
+            Calculadora.obtenerNumero(5);
+>>>>>>> 643a3c5a8df6032ca49943a759c9583e085dff63
             Calculadora.obtenerOperador('+');
-            expect(Calculadora.mostrar()).toBe(4);
-            Calculadora.obtenerOperador ('+');
-            Calculadora.obtenerNumero (2);
-            expect(Calculadora.mostrar()).toBe(6);
+            expect(Calculadora.calcular()).toBe(15);
+            Calculadora.obtenerNumero(5);
+            Calculadora.obtenerOperador('-');
+            expect(Calculadora.calcular()).toBe(10);
+            
         })
     })
