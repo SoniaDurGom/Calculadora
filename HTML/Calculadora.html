@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="../CSS/Calculadora.css">
-        <script src="../JS/Calculadora.js"></script>
+        <script src="../JS/Calculadora.js" defer></script>
 
         <title>Document</title>
     </head>
@@ -37,17 +37,34 @@
                     <div id="panel">
                         <div id="display"></div>
                         
-                        <div class="nixie">67890123456789+-*/NAN</div>
-                        <div class="nixie">7890123456789+-*/0123</div>
-                        <div class="nixie">890123456789+-*/01234</div>
-                        <div class="nixie">90123456789+-*/012345</div>
-                        <div class="nixie">0123456789+-*/0123456</div>
-                        <div class="nixie">123456789+-*/01234567</div>
-                        <div class="nixie">23456789+-*/012345678</div>
-                        <div class="nixie">3456789+-*/0123456789</div>
-                        <div class="nixie">456789+-*/01234567890</div>
-                        <div class="nixie">56789+-*/012345678901</div>
-                        <div class="nixie">6789+-*/0123456789012</div>
+                        <div class="nixie">890123456789+-*/.eNAN</div>
+                        
+                        <div class="nixie">90123437890123456789+</div>
+                        <div class="nixie">0123437890123456789+-</div>
+                        <div class="nixie">123437890123456789+-*</div>
+                        <div class="nixie">23437890123456789+-*/</div>
+                        <div class="nixie">3437890123456789+-*/e</div>
+                        <div class="nixie">437890123456789+-*/e.</div>
+                        <div class="nixie">47890123456789+-*/e.0</div>
+                        <div class="nixie">7890123456789+-*/e.01</div>
+                        <div class="nixie">890123456789+-*/e.012</div>
+                        <div class="nixie">90123456789+-*/e.0123</div>
+                        <div class="nixie">0123456789+-*/e.01234</div>
+                        <div class="nixie">123456789+-*/e.012345</div>
+                        <div class="nixie">23456789+-*/e.0123456</div>
+                        <div class="nixie">3456789+-*/e.01234567</div>
+                        <div class="nixie">456789+-*/e.012345678</div>
+                        <div class="nixie">56789+-*/e.0123456789</div>
+                        <div class="nixie">6789+-*/e.01234567890</div>
+                        <div class="nixie">789+-*/e.012345678901</div>
+                        <div class="nixie">89+-*/e.0123456789012</div>
+                        <div class="nixie">9+-*/e.01234567890123</div>
+                        <div class="nixie">+-*/e.012345678901234</div>
+                        <div class="nixie">-*/e.0123456789012345</div>
+                        <div class="nixie">*/e.01234567890123456</div>
+                        <div class="nixie">/e.012345678901234567</div>
+                        <div class="nixie">e.0123456789012345678</div>
+                        <div class="nixie">.01234567890123456789</div>
                         
                         <p class="tecla" id="numero0" onclick="imprimirNumero(0)">0</p>
                         <p class="tecla" id="numero1" onclick="imprimirNumero(1)">1</p>
