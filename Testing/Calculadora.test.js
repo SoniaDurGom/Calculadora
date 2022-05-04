@@ -322,14 +322,9 @@ afterEach(()=>{
             Calculadora.borrar();
         })
 
-<<<<<<< HEAD
         test ("Volver a calcular con el ultimo resultado: ", ()=>{ 
             Calculadora.obtenerNumero(2);
             Calculadora.obtenerNumero(2);
-=======
-            Calculadora.obtenerNumero(10);
-            Calculadora.obtenerNumero(5);
->>>>>>> 643a3c5a8df6032ca49943a759c9583e085dff63
             Calculadora.obtenerOperador('+');
             expect(Calculadora.calcular()).toBe(15);
             Calculadora.obtenerNumero(5);
