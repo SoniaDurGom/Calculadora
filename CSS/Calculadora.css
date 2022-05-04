@@ -29,7 +29,7 @@
         height: calc(100% - 2px);
 
         margin: 2px 3px 0 0;
-        box-shadow: none;
+        box-shadow: 0px 0px #ab33a3;
     }
 
     100%
@@ -133,7 +133,7 @@ img
     align-items: center;
     justify-content: center;
     
-    border-radius: 10px;
+    border-radius: 11px;
 
     font-size: 24px;
     font-family: 'Comic Sans MS';
@@ -147,7 +147,7 @@ img
 }
 .tecla:hover
 {
-    background-color: #cb43c2;
+    /* background-color: #cb43c2; */
     animation: teclaRecorrido 150ms linear;
 }
 
@@ -169,7 +169,7 @@ img
     grid-row: 1/2;
     grid-column: 1/5;
 
-    border-radius: 10px;
+    border-radius: 11px;
     border: 2px solid #d346c9;
 
     font-family: 'Miriam Mono CLM';
@@ -193,7 +193,7 @@ img
     grid-row: 1/2;
     grid-column: 1/5;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     font-family: 'Miriam Mono CLM';
     font-size: 4.5vw;
