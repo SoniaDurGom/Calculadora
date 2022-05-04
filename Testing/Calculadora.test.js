@@ -275,7 +275,7 @@ afterEach(()=>{
             //División por 0. 
             Calculadora.obtenerNumero(10);
             Calculadora.obtenerNumero(0);
-            expect(Calculadora.dividir()).toBe("NAN"); 
+            expect(Calculadora.dividir()).toBe(NaN); 
             Calculadora.borrar();
         })
     })
@@ -317,7 +317,7 @@ afterEach(()=>{
             Calculadora.obtenerNumero(5);
             Calculadora.obtenerNumero(3);
             Calculadora.obtenerOperador('()');
-            expect(Calculadora.calcular()).toBe("NAN");
+            expect(Calculadora.calcular()).toBe(NaN);
             Calculadora.borrar();
         })
 
