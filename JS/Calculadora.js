@@ -31,11 +31,11 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
             resultado=dividir();
             break;
         default:
-            console.log("Operador invalido");
-            resultado="NAN";
+            //console.log("Operador invalido");
+            resultado= NaN ;
             break;
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado; //Devuelve resultado de la operacion.
    
 }
@@ -50,11 +50,11 @@ function mostrar (){ //Meter un for each
     }
     calcular();
     imprimirPantalla (resultado);
-    if(resultado!=null){
-        console.log(num1+operador +num2+ "="+resultado);
+    //if(resultado!=null){
+        //console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
-        console.log(num1+operador +num2+ "="+resultado);
-    }
+        //console.log(num1+operador +num2+ "="+resultado);
+    //}
 }
 
 function imprimirPantalla (valor){ //Meter un for each
@@ -82,7 +82,15 @@ function imprimirNumero (numero){
 
 function imprimirOperador (operador){ 
     obtenerOperador(operador);
-    imprimirPantalla (operador);
+    if(operador == '*'){
+        imprimirPantalla ('x');
+    }
+    if(operador == '/'){
+        imprimirPantalla ('÷');
+    }
+    else{
+        imprimirPantalla (operador);
+    }
 }
 
 function clr (){
@@ -96,14 +104,14 @@ function clr (){
 function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
-        console.log(num2);
+        //console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
     }
 
     if (num1==null){
         num1=numero;
-        console.log(num1);
+        //console.log(num1);
         //document.getElementById('display').innerHTML = num1;
         return num1;
     } 
@@ -111,7 +119,7 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2!=null){
         num1=resultado;
         num2=numero;
-        console.log(num2);
+        //console.log(num2);
         //document.getElementById('display').innerHTML = num2;
         return num2;
     }
@@ -126,12 +134,12 @@ function obtenerOperador (op){
     if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
         operador=op;
        
-        console.log(operador);
+        //console.log(operador);
         //document.getElementById('display').innerHTML = operador;
         return operador;
     }
     else{
-        console.log(operador);
+        //console.log(operador);
         //document.getElementById('display').innerHTML = "ERROR";
         return "ERROR";
     }
@@ -140,19 +148,19 @@ function obtenerOperador (op){
 
 function sumar(){
     resultado=num1+num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function restar (){
     resultado=num1-num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
 function multiplicar (){
     resultado=num1*num2;
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 
@@ -160,9 +168,9 @@ function dividir (){
     if(num2!=0){
         resultado= num1/num2;
     }else{
-        resultado="NAN";
+        resultado= NaN;
     }
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 }
 //for each addeventlistener. Caa vez que clic muestra. MIRAR
