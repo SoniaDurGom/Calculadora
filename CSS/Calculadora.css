@@ -147,8 +147,8 @@ img
 }
 .tecla:hover
 {
-    /* background-color: #c740be; */
-    animation: teclaRecorrido 200ms linear;
+    background-color: #cb43c2;
+    animation: teclaRecorrido 150ms linear;
 }
 
 
