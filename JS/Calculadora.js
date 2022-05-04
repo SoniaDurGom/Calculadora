@@ -3,6 +3,8 @@
 //var JSDOM = jsdom.JSDOM;
 
 //numeroanterior
+//Boorado, primer clic, borra num2, segundo clic borra num1 y operador.
+//Decimales, pasar a string y luego parse int o parsefloat.
 
 var resultado=null; //Resultado de la operacion
 var num1=null; //Primer operador
@@ -30,9 +32,13 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
         case '/':  
             resultado=dividir();
             break;
+
+        case null:  
+            resultado="ERROR";
+            break;
         default:
             //console.log("Operador invalido");
-            resultado= NaN ;
+            resultado= 'NAN';
             break;
     }
     //console.log(resultado);
@@ -50,11 +56,11 @@ function mostrar (){ //Meter un for each
     }
     calcular();
     imprimirPantalla (resultado);
-    //if(resultado!=null){
-        //console.log(num1+operador +num2+ "="+resultado);
+    if(resultado!=null){
+        console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
-        //console.log(num1+operador +num2+ "="+resultado);
-    //}
+        console.log(num1+operador +num2+ "="+resultado);
+    }
 }
 
 function imprimirPantalla (valor){ //Meter un for each
@@ -62,10 +68,23 @@ function imprimirPantalla (valor){ //Meter un for each
 }
 
 function imprimirNumero (numero){
+    if(numero==null){
+        resultado=null;
+        num1=null;
+    }
     if(operador==null) { //Si no hay operador, sigue leyendo numeros
         numCadena+=numero.toString();
-        aux=parseInt(numCadena);
-        imprimirPantalla (aux);
+        if(comaFlotante()==true){
+            numCadena+='.';
+            aux=parseFloat(numCadena);
+            imprimirPantalla (aux);
+            console.log(numCadena);
+        }
+        else{
+            aux=parseInt(numCadena);
+            imprimirPantalla (aux);
+        }
+        
     }else{
         if(num1==null){
             obtenerNumero(aux);
@@ -172,6 +191,10 @@ function dividir (){
     }
     //console.log(resultado);
     return resultado;
+}
+
+function comaFlotante(){
+    return true;
 }
 //for each addeventlistener. Caa vez que clic muestra. MIRAR
 
