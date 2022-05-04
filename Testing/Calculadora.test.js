@@ -13,13 +13,13 @@ afterEach(()=>{
         test ("Test obtenerNumero: ", ()=>{ 
             expect(Calculadora.obtenerNumero(1)).toBe(1); 
             expect(Calculadora.obtenerNumero(2)).toBe(2); 
-            expect(Calculadora.obtenerNumero(52)).toBe(52); //Antes error, ahora los numeros que se obtienen despues de tener num 1 y num2 se meten en num2
+            expect(Calculadora.obtenerNumero(52)).toBe(52); 
             Calculadora.borrar();
         })
     })
 
     describe("Obtencion de operadores", () =>{
-        test ("Test numero obtenerOperador: ", ()=>{ 
+        test ("Test obtenerOperador: ", ()=>{ 
             //Operadores validos
             expect(Calculadora.obtenerOperador('+')).toBe('+'); 
             expect(Calculadora.obtenerOperador('-')).toBe('-'); 
@@ -62,8 +62,7 @@ afterEach(()=>{
             expect(Calculadora.sumar()).toBeCloseTo(2.5,5);
             Calculadora.borrar();
         })
-        test ("Test SUMA con el primer nuevo negativo: ", ()=>{ 
-            //Con un negativo
+        test ("Test SUMA con el primer nuemero negativo: ", ()=>{ 
             Calculadora.obtenerNumero(-5);
             Calculadora.obtenerNumero(3);
             expect(Calculadora.sumar()).toBe(-2);
@@ -159,7 +158,7 @@ afterEach(()=>{
             Calculadora.borrar();
         })
 
-        test ("Test resta con numeros decimales y numeros negativos: ", ()=>{ 
+        test ("Test resta con numeros decimales y negativos: ", ()=>{ 
             Calculadora.obtenerNumero(-6.2);
             Calculadora.obtenerNumero(-2.3);
             expect(Calculadora.restar()).toBeCloseTo(-3.9,5);
@@ -197,7 +196,7 @@ afterEach(()=>{
             Calculadora.borrar();
         })
 
-        test ("Test MULTIPLICACIÓN con el segundo negativo: ", ()=>{ 
+        test ("Test MULTIPLICACIÓN con el segundo numero negativo: ", ()=>{ 
             Calculadora.obtenerNumero(2);
             Calculadora.obtenerNumero(-5);
             expect(Calculadora.multiplicar()).toBe(-10);
@@ -306,7 +305,7 @@ afterEach(()=>{
             Calculadora.borrar();
         })
 
-        test ("Calvulo con operador division", () =>{
+        test ("Calculo con operador division", () =>{
             Calculadora.obtenerNumero(15);
             Calculadora.obtenerNumero(3);
             Calculadora.obtenerOperador('/');
