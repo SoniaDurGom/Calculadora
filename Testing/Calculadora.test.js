@@ -310,8 +310,7 @@ afterEach(()=>{
             Calculadora.obtenerNumero(3);
             Calculadora.obtenerOperador('/');
             expect(Calculadora.calcular()).toBe(5);
-            Calculadora.borrar();
-        })
+       })
 
         test ("Calculo con operador invalido: ", ()=>{ 
             Calculadora.obtenerNumero(5);
@@ -322,12 +321,12 @@ afterEach(()=>{
         })
 
         test ("Volver a calcular con el ultimo resultado: ", ()=>{ 
-                Calculadora.obtenerNumero(5);
-                Calculadora.obtenerOperador('+');
-                Calculadora.obtenerNumero(10);
-                expect(Calculadora.calcular()).toBe(15);
-                Calculadora.obtenerOperador('-');
-                Calculadora.obtenerNumero(5);
-                expect(Calculadora.calcular()).toBe(10);
+            Calculadora.obtenerNumero(5);
+            Calculadora.obtenerOperador('+');
+            Calculadora.obtenerNumero(10);
+            expect(Calculadora.calcular()).toBe(15);
+            Calculadora.obtenerOperador('-');
+            Calculadora.obtenerNumero(5);
+            expect(Calculadora.calcular()).toBe(10);
         })
     })
