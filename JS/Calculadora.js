@@ -14,6 +14,8 @@ var operador=null; //Operacion a realizar
 var aux;
 var numCadena=""; //El valor del numero guardado como cadena
 var count = 0; //Para recibir el segundo numero
+var coma1=0;
+var coma2=0;
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
     switch (operador) {
@@ -55,7 +57,9 @@ function mostrar (){ //Meter un for each
         aux=0;
     }
     calcular();
-    imprimirPantalla (resultado);
+    imprimirPantalla (resultado.toFixed(2)); //redondea a 2 decimales
+    coma1=0;
+    coma2=0;
     if(resultado!=null){
         console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
@@ -68,14 +72,13 @@ function imprimirPantalla (valor){ //Meter un for each
 }
 
 function imprimirNumero (numero){
-    if(numero==null){
-        resultado=null;
-        num1=null;
-    }
     if(operador==null) { //Si no hay operador, sigue leyendo numeros
         numCadena+=numero.toString();
         if(comaFlotante()==true){
-            numCadena+='.';
+            while(coma1==0){
+                numCadena+='.';
+                coma1++;
+            }
             aux=parseFloat(numCadena);
             imprimirPantalla (aux);
             console.log(numCadena);
@@ -91,9 +94,23 @@ function imprimirNumero (numero){
             numCadena="";
             aux=0;
         }
-        numCadena+=numero.toString();
-        aux=parseInt(numCadena);
-        imprimirPantalla (aux);
+        if(comaFlotante()==true){
+            numCadena+=numero.toString()
+            while(coma2==0){
+                numCadena+='.';
+                coma2++;
+            }
+            aux=parseFloat(numCadena);
+            imprimirPantalla (aux);
+            console.log(numCadena);
+        }
+        else{
+            numCadena+=numero.toString();
+            aux=parseInt(numCadena);
+            imprimirPantalla (aux);
+        }
+        
+       
     }
     //obtenerNumero(numero);
     //imprimirPantalla(numero);
@@ -139,7 +156,6 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
         num1=resultado;
         num2=numero;
         //console.log(num2);
-        //document.getElementById('display').innerHTML = num2;
         return num2;
     }
     else{
@@ -207,6 +223,8 @@ function borrar (){
     aux=null;
     numCadena="";
     count=0;
+    coma1=0;
+    coma2=0;
     //document.getElementById('display').innerHTML = resultado;
 }
 
