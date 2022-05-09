@@ -36,7 +36,7 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
             break;
 
         case '^':  
-            resultado=pontencia();
+            resultado=potencia();
             break;
 
         case '√':  
@@ -207,7 +207,7 @@ function dividir (){
 }
 
 // Potencia con pow.
-function pontencia(){
+function potencia(){
     resultado= math.pow(num1, num2);
 }
 //raiz, por defecto cuadrada si solo se mete num uno, si se mete dos se hace la raiz x de x. pow(2,1/3)
@@ -252,4 +252,4 @@ function recorridoTecla(id)
 
 
 
-module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
+module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,potencia,raizN,raizCuadrada,num1,num2,operador,resultado}
