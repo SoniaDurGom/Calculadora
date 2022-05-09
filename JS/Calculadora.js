@@ -14,8 +14,8 @@ var operador=null; //Operacion a realizar
 var aux;
 var numCadena=""; //El valor del numero guardado como cadena
 var count = 0; //Para recibir el segundo numero
-var coma1=0;
-var coma2=0;
+
+var coma=false;
 
 function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
     switch (operador) {
@@ -33,6 +33,21 @@ function calcular (){ //LLamado cuando se pulsa "=" CALCULAR RESULTADO
         
         case '/':  
             resultado=dividir();
+            break;
+
+        case '^':  
+            resultado=potencia();
+            break;
+
+        case '√':  
+            if (num2==null){
+                resultado=raizCuadrada();
+                break;
+            }
+            if(num1!=null && num2!=null){
+                resultado=raizN();
+                break;
+            }
             break;
 
         case null:  
@@ -60,11 +75,11 @@ function mostrar (){ //Meter un for each
     imprimirPantalla (resultado.toFixed(2)); //redondea a 2 decimales
     coma1=0;
     coma2=0;
-    if(resultado!=null){
-        console.log(num1+operador +num2+ "="+resultado);
+    //if(resultado!=null){
+      //  console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
-        console.log(num1+operador +num2+ "="+resultado);
-    }
+        //console.log(num1+operador +num2+ "="+resultado);
+    //}
 }
 
 function imprimirPantalla (valor){ //Meter un for each
@@ -74,11 +89,7 @@ function imprimirPantalla (valor){ //Meter un for each
 function imprimirNumero (numero){
     if(operador==null) { //Si no hay operador, sigue leyendo numeros
         numCadena+=numero.toString();
-        if(comaFlotante()==true){
-            while(coma1==0){
-                numCadena+='.';
-                coma1++;
-            }
+        if(coma==true){
             aux=parseFloat(numCadena);
             imprimirPantalla (aux);
             console.log(numCadena);
@@ -94,12 +105,8 @@ function imprimirNumero (numero){
             numCadena="";
             aux=0;
         }
-        if(comaFlotante()==true){
+        if(coma==true){
             numCadena+=numero.toString()
-            while(coma2==0){
-                numCadena+='.';
-                coma2++;
-            }
             aux=parseFloat(numCadena);
             imprimirPantalla (aux);
             console.log(numCadena);
@@ -109,11 +116,8 @@ function imprimirNumero (numero){
             aux=parseInt(numCadena);
             imprimirPantalla (aux);
         }
-        
        
     }
-    //obtenerNumero(numero);
-    //imprimirPantalla(numero);
 }
 
 function imprimirOperador (operador){ 
@@ -141,14 +145,12 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
     if (num1!=null && num2==null){
         num2=numero;
         //console.log(num2);
-        //document.getElementById('display').innerHTML = num2;
         return num2;
     }
 
     if (num1==null){
         num1=numero;
         //console.log(num1);
-        //document.getElementById('display').innerHTML = num1;
         return num1;
     } 
 
@@ -168,14 +170,9 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
 function obtenerOperador (op){
     if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
         operador=op;
-       
-        //console.log(operador);
-        //document.getElementById('display').innerHTML = operador;
         return operador;
     }
     else{
-        //console.log(operador);
-        //document.getElementById('display').innerHTML = "ERROR";
         return "ERROR";
     }
     
@@ -209,8 +206,21 @@ function dividir (){
     return resultado;
 }
 
+// Potencia con pow.
+function potencia(){
+    resultado= math.pow(num1, num2);
+}
+//raiz, por defecto cuadrada si solo se mete num uno, si se mete dos se hace la raiz x de x. pow(2,1/3)
+function raizCuadrada(){
+    resultado= math.sqrt(num1);
+}
+function raizN(){
+    resultado= math.pow(num1,(1/num2));
+}
+
 function comaFlotante(){
-    return true;
+    numCadena+='.';
+    coma=true;
 }
 //for each addeventlistener. Caa vez que clic muestra. MIRAR
 
@@ -223,23 +233,11 @@ function borrar (){
     aux=null;
     numCadena="";
     count=0;
-    coma1=0;
-    coma2=0;
-    //document.getElementById('display').innerHTML = resultado;
+    coma=false;
 }
 
 //cdobject.onclick = function(){myScript};
-//const calculadora={
-  //  num1: num1,
-    //num2: null,
-    //op,
-    //resultado: null,
-    //sumar: function(n1,n2){return n1+n2},
-    //restar,
-    //....
-    //luego se exporta calculadora
 
-//}
 
 
 
@@ -254,4 +252,4 @@ function recorridoTecla(id)
 
 
 
-module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,num1,num2,operador,resultado}
+module.exports= {sumar, restar, dividir, multiplicar,borrar,calcular,mostrar,obtenerNumero,obtenerOperador,potencia,raizN,raizCuadrada,num1,num2,operador,resultado}
