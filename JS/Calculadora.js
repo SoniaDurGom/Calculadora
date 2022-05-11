@@ -73,10 +73,8 @@ function mostrar (){ //Meter un for each
     }
     calcular();
     imprimirPantalla (resultado.toFixed(2)); //redondea a 2 decimales
-    coma1=0;
-    coma2=0;
     //if(resultado!=null){
-      //  console.log(num1+operador +num2+ "="+resultado);
+        //console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
         //console.log(num1+operador +num2+ "="+resultado);
     //}
@@ -168,7 +166,7 @@ function obtenerNumero (numero){ //Llamada al pulsar cualquier boton numerico
 }
 
 function obtenerOperador (op){
-    if(op == '+' || op == '-' || op ==  '*' || op ==  '/'){
+    if(op == '+' || op == '-' || op ==  '*' || op ==  '/'|| op ==  '^'|| op ==  '√'){
         operador=op;
         return operador;
     }
@@ -208,14 +206,18 @@ function dividir (){
 
 // Potencia con pow.
 function potencia(){
-    resultado= math.pow(num1, num2);
+    resultado= Math.pow(num1, num2);
+    return resultado;
+    
 }
 //raiz, por defecto cuadrada si solo se mete num uno, si se mete dos se hace la raiz x de x. pow(2,1/3)
 function raizCuadrada(){
-    resultado= math.sqrt(num1);
+    resultado= Math.sqrt(num1);
+    return resultado;
 }
 function raizN(){
-    resultado= math.pow(num1,(1/num2));
+    resultado= Math.pow(num1,(1/num2));
+    return resultado;
 }
 
 function comaFlotante(){
