@@ -93,9 +93,9 @@ img
 }
 .tecla
 {
-    width: calc(100%);
-    height: calc(100%);
-    margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 2px 3px;
 
     display: flex;
     align-items: center;
@@ -107,18 +107,17 @@ img
     font-family: 'Comic Sans MS';
     color: #4f174c;
 
-    transition: background-color 50ms ease-in-out, width 50ms ease-in-out, height 50ms ease-in-out, margin 50ms ease-in-out, box-shadow 50ms ease-in-out;
-
     box-shadow: -3px 2px #ab33a3;
 
     background-color: #d346c9;
 }
 .tecla:active
 {
-    width: calc(100% - 3px);
-    height: calc(100% - 2px);
+    transition: width 50ms ease-in-out, height 50ms ease-in-out, margin 50ms ease-in-out, box-shadow 50ms ease-in-out,  background-color 50ms ease-in-out;
 
-    margin: 2px 3px 0 0;
+    margin: 0;
+    margin-top: 2px;
+
     box-shadow: 0px 0px #ab33a3;
 
     background-color: #cb41c2;
@@ -179,83 +178,15 @@ img
 
 
 /*****************************************************************/
-/*Row 2*/
-
-#teclaLimpiar
-{
-    grid-row: 2/3;
-    grid-column: 1/4;
-    /* background-color: rgb(60, 0, 128); */
-}
-#teclaDivision
-{
-    grid-row: 2/3;
-    grid-column: 4/5;
-    /* background-color: rgb(0, 77, 128); */
-}
 
 
-/*****************************************************************/
-/*Row 3*/
 
-#numero7
+#numero0
 {
-    grid-row: 3/4;
-    grid-column: 1/2;
-    /* background-color: rgb(0, 41, 128); */
-}
-#numero8
-{
-    grid-row: 3/4;
+    grid-row: 6/7;
     grid-column: 2/3;
-    /* background-color: rgb(0, 60, 128); */
+    /* background-color: rgb(100, 128, 0); */
 }
-#numero9
-{
-    grid-row: 3/4;
-    grid-column: 3/4;
-    /* background-color: green; */
-}
-#teclaMultiplicacion
-{
-    grid-row: 3/4;
-    grid-column: 4/5;
-    /* background-color: rgb(0, 113, 128); */
-}
-
-
-/*****************************************************************/
-/*Row 4*/
-
-#numero4
-{
-    grid-row: 4/5;
-    grid-column: 1/2;
-    /* background-color: rgb(128, 0, 75); */
-}
-#numero5
-{
-    grid-row: 4/5;
-    grid-column: 2/3;
-    /* background-color: rgb(117, 0, 128); */
-}
-#numero6
-{
-    grid-row: 4/5;
-    grid-column: 3/4;
-    /* background-color: rgb(0, 41, 128); */
-}
-#teclaResta
-{
-    grid-row: 4/5;
-    grid-column: 4/5;
-    /* background-color: rgb(0, 128, 111); */
-}
-
-
-/*****************************************************************/
-/*Row 5*/
-
 #numero1
 {
     grid-row: 5/6;
@@ -274,34 +205,111 @@ img
     grid-column: 3/4;
     /* background-color: rgb(128, 0, 0); */
 }
-#teclaSuma
+#numero4
 {
-    grid-row: 5/6;
-    grid-column: 4/5;
-    /* background-color: rgb(26, 128, 0); */
+    grid-row: 4/5;
+    grid-column: 1/2;
+    /* background-color: rgb(128, 0, 75); */
 }
-
-
-/*****************************************************************/
-/*Row 6*/
-
-#numero0
+#numero5
 {
-    grid-row: 6/7;
+    grid-row: 4/5;
     grid-column: 2/3;
-    /* background-color: rgb(100, 128, 0); */
+    /* background-color: rgb(117, 0, 128); */
 }
+#numero6
+{
+    grid-row: 4/5;
+    grid-column: 3/4;
+    /* background-color: rgb(0, 41, 128); */
+}
+#numero7
+{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    /* background-color: rgb(0, 41, 128); */
+}
+#numero8
+{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    /* background-color: rgb(0, 60, 128); */
+}
+#numero9
+{
+    grid-row: 3/4;
+    grid-column: 3/4;
+    /* background-color: green; */
+}
+
+
+
 #teclaPunto
 {
     grid-row: 6/7;
     grid-column: 3/4;
     /* background-color: rgb(13, 0, 128); */
 }
+
+
+
+/*****************************************************************/
+
+
+
+#teclaSuma
+{
+    grid-row: 5/6;
+    grid-column: 4/5;
+    /* background-color: rgb(26, 128, 0); */
+}
+#teclaResta
+{
+    grid-row: 5/6;
+    grid-column: 5/6;
+    /* background-color: rgb(0, 128, 111); */
+}
+#teclaMultiplicacion
+{
+    grid-row: 4/5;
+    grid-column: 4/5;
+    /* background-color: rgb(0, 113, 128); */
+}
+#teclaDivision
+{
+    grid-row: 4/5;
+    grid-column: 5/6;
+    /* background-color: rgb(0, 77, 128); */
+}
+#teclaRaiz
+{
+    grid-row: 3/4;
+    grid-column: 4/5;
+    /* background-color: rgb(0, 113, 128); */
+}
+#teclaPotencia
+{
+    grid-row: 3/4;
+    grid-column: 5/6;
+    /* background-color: rgb(0, 77, 128); */
+}
+
+
+
 #teclaTotal
 {
     grid-row: 6/7;
-    grid-column: 4/5;
+    grid-column: 4/6;
     /* background-color: rgb(92, 0, 128); */
+}
+
+
+
+#teclaLimpiar
+{
+    grid-row: 2/3;
+    grid-column: 1/6;
+    /* background-color: rgb(60, 0, 128); */
 }
 
 
