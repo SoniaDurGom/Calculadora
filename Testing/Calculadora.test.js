@@ -380,6 +380,12 @@ afterEach(()=>{
             expect(Calculadora.calcular()).toBe(5);
             Calculadora.borrar();
         })
+        test ("Calculo con operador raiz cuadrada", () =>{
+            Calculadora.obtenerNumero(4);
+            Calculadora.obtenerOperador('√');
+            expect(Calculadora.calcular()).toBe(2);
+            Calculadora.borrar();
+        })
 
         test ("Calculo con operador invalido: ", ()=>{ 
             Calculadora.obtenerNumero(5);
