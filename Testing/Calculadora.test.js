@@ -385,7 +385,7 @@ afterEach(()=>{
             Calculadora.obtenerNumero(5);
             Calculadora.obtenerNumero(3);
             Calculadora.obtenerOperador('()');
-            expect(Calculadora.calcular()).toBe(NaN);
+            expect(Calculadora.calcular()).toBe('ERROR');
             Calculadora.borrar();
         })
 
