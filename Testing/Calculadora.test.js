@@ -386,6 +386,13 @@ afterEach(()=>{
             expect(Calculadora.calcular()).toBe(2);
             Calculadora.borrar();
         })
+        test ("Calculo con operador potencia", () =>{
+            Calculadora.obtenerNumero(4);
+            Calculadora.obtenerNumero(4);
+            Calculadora.obtenerOperador('^');
+            expect(Calculadora.calcular()).toBe(256);
+            Calculadora.borrar();
+        })
 
         test ("Calculo con operador invalido: ", ()=>{ 
             Calculadora.obtenerNumero(5);
