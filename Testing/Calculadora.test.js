@@ -280,6 +280,74 @@ afterEach(()=>{
         })
     })
 
+    describe ("Potencias", () =>{
+        test ("Test POTENCIA con numeros positivos: ", ()=>{
+            Calculadora.obtenerNumero(10);
+            Calculadora.obtenerNumero(2);
+            expect(Calculadora.potencia()).toBe(100);
+            Calculadora.borrar();
+        })
+
+        test ("Test POTENCIA con la base negativa: ", ()=>{
+            Calculadora.obtenerNumero(-15);
+            Calculadora.obtenerNumero(3);
+            expect(Calculadora.dividir()).toBe(-3375);
+            Calculadora.borrar();
+        })
+        test ("Test POTENCIA con base 0: ", ()=>{
+            Calculadora.obtenerNumero(0);
+            Calculadora.obtenerNumero(2);
+            expect(Calculadora.dividir()).toBe(0);
+            Calculadora.borrar();
+        })
+        test ("Test POTENCIA con exponente 0: ", ()=>{
+            Calculadora.obtenerNumero(2);
+            Calculadora.obtenerNumero(0);
+            expect(Calculadora.dividir()).toBe(1);
+            Calculadora.borrar();
+        })
+        test ("Test POTENCIA con base decimal: ", ()=>{
+            Calculadora.obtenerNumero(2.2);
+            Calculadora.obtenerNumero(2);
+            expect(Calculadora.potencia()).toBe(6.25);
+            Calculadora.borrar();
+        })
+        test ("Test POTENCIA con exponente decimal: ", ()=>{
+            Calculadora.obtenerNumero(2);
+            Calculadora.obtenerNumero(2.2);
+            expect(Calculadora.potencia()).toBe(4.59);
+            Calculadora.borrar();
+        })
+
+    })
+
+    describe ("Raiz cuadrada", () =>{
+        test ("Test RAIZ CUADRADA con numero positivo: ", ()=>{
+            Calculadora.obtenerNumero(4);
+            expect(Calculadora.potencia()).toBe(2);
+            Calculadora.borrar();
+        })
+
+        test ("Test RAIZ CUADRADA con numero negativo: ", ()=>{
+            Calculadora.obtenerNumero(-4);
+            expect(Calculadora.dividir()).toBe(NaN);
+            Calculadora.borrar();
+        })
+
+        test ("Test RAIZ CUADRADA con numero decimal: ", ()=>{
+            Calculadora.obtenerNumero(2.2);
+            expect(Calculadora.dividir()).toBe(1.48);
+            Calculadora.borrar();
+        })
+
+        test ("Test RAIZ CUADRADA de 0: ", ()=>{
+            Calculadora.obtenerNumero(0);
+            expect(Calculadora.dividir()).toBe(0);
+            Calculadora.borrar();
+        })
+
+    })
+    
     describe ("Calcular numero", () =>{
         test ("Calculo con operador suma: ", ()=>{ 
             Calculadora.obtenerNumero(5);
