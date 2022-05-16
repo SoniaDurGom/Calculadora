@@ -72,7 +72,12 @@ function mostrar (){ //Meter un for each
         aux=0;
     }
     calcular();
-    imprimirPantalla (resultado.toFixed(2)); //redondea a 2 decimales
+    if(Number.isInteger(resultado)){
+        imprimirPantalla (resultado);
+    }
+    else{
+        imprimirPantalla (resultado.toFixed(2)); //redondea a 2 decimales
+    }
     //if(resultado!=null){
         //console.log(num1+operador +num2+ "="+resultado);
         //num1=resultado;
